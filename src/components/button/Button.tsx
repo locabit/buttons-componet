@@ -6,7 +6,7 @@ interface ButtonProps {
   text?: string;
   size?: "small" | "medium" | "large";
   borders?: "squared" | "rounded";
-  state?: boolean;
+  isDisabled?: boolean;
   load?: boolean;
   color?: "primary" | "link" | "info" | "success" | "warning" | "danger";
   outlined?: boolean;
@@ -18,7 +18,7 @@ const Button: React.FC<ButtonProps> = ({
   text,
   size,
   borders,
-  state = false,
+  isDisabled = false,
   load = false,
   color,
   outlined = false,
@@ -46,7 +46,7 @@ const Button: React.FC<ButtonProps> = ({
     { "txt-medium": size === "medium" },
     { "txt-large": size === "large" },
 
-    { "disabled-style": state === true },
+    { "disabled-style": isDisabled === true },
     { "btn-loading": load === true },
 
     { "squared-style": borders === "squared" },
@@ -59,7 +59,7 @@ const Button: React.FC<ButtonProps> = ({
 
   return (
     <>
-      <button className={btnStyle} disabled={state}>
+      <button className={btnStyle} disabled={isDisabled}>
         {text} {children}
       </button>
     </>

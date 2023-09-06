@@ -27,7 +27,7 @@ const App: React.FC = () => {
       </div>
       <h1>STATES</h1>
       <div className="container">
-        <Button text="DISABLED" state={true} />
+        <Button text="DISABLED" isDisabled={true} />
         <Button load={true}>
           <FontAwesomeIcon icon={faSpinner} spin />
         </Button>
